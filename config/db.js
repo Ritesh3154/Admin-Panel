@@ -2,7 +2,7 @@ const { default: mongoose } = require('mongoose');
 const { app } = require('../server');
 
 exports.dbConnect = () => {
-    mongoose.connect('mongodb://localhost:27017/admin')
+    mongoose.connect('mongodb+srv://riteshpatdia0723:riteshpatdia3154@ritesh.lxy6r.mongodb.net/admin-panel')
         .then(() => {
             console.log("connected..👍");
         })

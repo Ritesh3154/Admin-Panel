@@ -90,7 +90,7 @@
                                                 <div class="col-sm-9">
                                                     <select name="subCategory" id="subCategory" class="form-select">
                                                         <option value="">--select Sub category--</option>
-                                                        <% if (subcategories) { %>
+                                                            <% if (subcategories) { %>
                                                             <% subcategories.forEach((sub) => { %>
                                                                 <option value="<%= sub._id %>"><%= sub.sub_cat %></option>
                                                             <% }) %>

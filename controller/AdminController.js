@@ -94,6 +94,7 @@ exports.ChangePassword = async (req, res) => {
                         password: hash_pass
                     }
                 )
+                req.flash('info', 'Your password has been Changed!!')
                 res.redirect('/ChangePassword')
             } else {
                 res.json("confirm password does not match")
@@ -127,7 +128,7 @@ exports.forgotPassword = async (req, res) => {
     } else {
         req.flash('info', 'email does not exist')
         res.redirect('/login')
-    }   
+    }
 }
 
 exports.update_password = async (req, res) => {

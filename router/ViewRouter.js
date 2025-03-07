@@ -38,6 +38,7 @@ router.get('/logout', (req, res) => {
     res.clearCookie('admin')
     res.redirect('/login')
 })
+
 router.get('/myprofile', async (req, res) => {
 
     const cookieData = req.cookies.admin
@@ -53,7 +54,7 @@ router.get('/myprofile', async (req, res) => {
 
 router.get('/ChangePassword', async (req, res) => {
     const email = req.cookies.admin.email
-    res.render('pages/ChangePassword', { email })
+    res.render('pages/ChangePassword', { email, message: req.flash('info') })
 })
 router.get('/updatepwd', (req, res) => {
     res.render('pages/Change-ForgotPwd', { message: req.flash('info') })
@@ -86,6 +87,7 @@ router.get('/addProduct', async (req, res) => {
 
     res.render('pages/AddProduct', { categories, subcategories, selectCategories })
 })
+
 router.get('/viewProduct', async (req, res) => {
     const categories = await category.find();
     const subCategories = await SubCat.find()

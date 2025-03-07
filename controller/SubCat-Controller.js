@@ -9,7 +9,6 @@ exports.store = async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-
 }
 
 exports.index = async (req, res) => {
